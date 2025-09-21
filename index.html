@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="四季の味わいを楽しむ街角カフェ『Hikari Coffee』の公式サイト。季節限定メニューや自家焙煎コーヒー、こだわりのスイーツをご紹介します。"
+    />
+    <title>Hikari Coffee | 街角のくつろぎカフェ</title>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+      crossorigin
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="home">
+      <div class="container header__inner">
+        <a class="logo" href="#home">Hikari Coffee</a>
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          aria-label="メニューを開閉"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="site-nav" id="site-navigation">
+          <ul>
+            <li><a href="#about">私たちについて</a></li>
+            <li><a href="#menu">メニュー</a></li>
+            <li><a href="#seasonal">季節限定</a></li>
+            <li><a href="#gallery">ギャラリー</a></li>
+            <li><a href="#visit">アクセス</a></li>
+            <li><a href="#contact">ご予約</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero__content">
+          <p class="hero__kicker">四季の香りに満ちた街角カフェ</p>
+          <h1>一杯のコーヒーから始まる、穏やかなひととき。</h1>
+          <p>
+            自家焙煎の豆と旬の素材で作るスイーツ。朝は光が差し込み、夜はキャンドルが灯る、心やすらぐ空間でお待ちしています。
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#reservation">オンライン予約</a>
+            <a class="btn btn--ghost" href="#menu">メニューを見る</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="container about__grid">
+          <div class="about__image" role="presentation" aria-hidden="true"></div>
+          <div class="about__content">
+            <h2>私たちのこだわり</h2>
+            <p>
+              Hikari Coffee は「日常を照らす一杯」をテーマに、丁寧なハンドドリップと旬の素材を掛け合わせたメニューをご提供しています。豆は世界各地の小規模農園からセレクト。焙煎は店内のロースターで行い、豊かな香りと奥行きのある味わいを引き出します。
+            </p>
+            <p>
+              店内は木の温もりとやわらかな灯りに包まれ、朝から夜までさまざまなシーンでご利用いただけます。テイクアウトもお気軽にどうぞ。
+            </p>
+            <ul class="about__list">
+              <li>・自家焙煎のスペシャルティコーヒー</li>
+              <li>・季節の果実を使ったスイーツとドリンク</li>
+              <li>・ヴィーガン対応メニューもご用意</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="menu">
+        <div class="container">
+          <div class="section__heading">
+            <span class="section__kicker">Signature Menu</span>
+            <h2>人気の定番メニュー</h2>
+            <p>
+              どの時間帯にもぴったりな、Hikari Coffee の看板メニューをご紹介します。
+            </p>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <h3>光ブレンドコーヒー</h3>
+              <p>
+                3種類の豆を独自比率でブレンド。柑橘の香りとビターチョコの余韻が心地よく広がります。
+              </p>
+              <p class="card__price">¥620</p>
+            </article>
+            <article class="card">
+              <h3>抹茶ラテ・グラッセ</h3>
+              <p>
+                京都宇治の抹茶と自家製のオーツミルクシロップ。まろやかな甘みと香りが楽しめます。
+              </p>
+              <p class="card__price">¥680</p>
+            </article>
+            <article class="card">
+              <h3>森の果実タルト</h3>
+              <p>
+                季節のベリーを贅沢に使用したタルト。サクサクのタルト生地に甘酸っぱい果実が彩りを添えます。
+              </p>
+              <p class="card__price">¥720</p>
+            </article>
+            <article class="card">
+              <h3>モーニングプレート</h3>
+              <p>
+                自家製グラノーラ、季節のスープ、焼き立てフォカッチャがセットになった人気の朝食プレート。
+              </p>
+              <p class="card__price">¥1,100</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--accent" id="seasonal">
+        <div class="container seasonal">
+          <div>
+            <span class="section__kicker">Seasonal Special</span>
+            <h2>春の限定メニュー</h2>
+            <p>
+              春の訪れを感じる、淡い色合いと香りが魅力の限定メニューが登場。旬の苺や桜をテーマにしたラインアップです。
+            </p>
+          </div>
+          <ul class="seasonal__list">
+            <li>
+              <h3>桜のアフォガート</h3>
+              <p>桜の香りを閉じ込めたジェラートに、エスプレッソを注いでお召し上がりください。</p>
+            </li>
+            <li>
+              <h3>苺とルバーブのトースト</h3>
+              <p>自家製酵母パンに、甘酸っぱいコンポートとフレッシュチーズを合わせました。</p>
+            </li>
+            <li>
+              <h3>春のシトラスソーダ</h3>
+              <p>4種の柑橘をブレンド。爽やかな香りと微炭酸が、春風のように軽やかです。</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="container features">
+          <article>
+            <h3>自家焙煎スタジオ</h3>
+            <p>
+              店内で毎朝焙煎することで、豆の個性を最大限に引き出します。焙煎の様子はガラス越しにご覧いただけます。
+            </p>
+          </article>
+          <article>
+            <h3>バリスタワークショップ</h3>
+            <p>
+              毎月第2土曜日に、ラテアート体験や豆の選び方を学べる少人数制のワークショップを開催しています。
+            </p>
+          </article>
+          <article>
+            <h3>こだわりの空間</h3>
+            <p>
+              木と真鍮を基調にしたインテリア。窓際の席や奥のソファ席など、シーンに合わせた座席をご用意しています。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="container">
+          <div class="section__heading">
+            <span class="section__kicker">Gallery</span>
+            <h2>店内の雰囲気</h2>
+            <p>昼と夜で表情を変える、Hikari Coffee の空間を少しだけご紹介します。</p>
+          </div>
+          <div class="gallery">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="木のテーブルと観葉植物がある明るいカフェの店内" />
+              <figcaption>朝の柔らかな光が差し込むカウンター席。</figcaption>
+            </figure>
+            <figure>
+              <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=800&q=80" alt="アートなラテアートが描かれたカフェラテ" />
+              <figcaption>バリスタが丁寧に仕上げるラテアート。</figcaption>
+            </figure>
+            <figure>
+              <img src="https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?auto=format&fit=crop&w=800&q=80" alt="木のトレイに並ぶタルトや焼き菓子" />
+              <figcaption>旬の果実を使った色鮮やかなスイーツ。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--light" id="testimonials">
+        <div class="container">
+          <div class="section__heading">
+            <span class="section__kicker">Voices</span>
+            <h2>お客様の声</h2>
+          </div>
+          <div class="testimonials">
+            <blockquote>
+              <p>
+                「季節ごとにメニューが変わるので通うのが楽しみ。スタッフの皆さんの笑顔に癒やされます。」
+              </p>
+              <cite>— 会社員・Aさん</cite>
+            </blockquote>
+            <blockquote>
+              <p>
+                「落ち着いた空間で、仕事の打ち合わせにもぴったり。コーヒーの香りが心地よく広がります。」
+              </p>
+              <cite>— デザイナー・Mさん</cite>
+            </blockquote>
+            <blockquote>
+              <p>
+                「ヴィーガン対応のスイーツがあるのが嬉しい！テイクアウトでもよく利用しています。」
+              </p>
+              <cite>— 大学生・Rさん</cite>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="news">
+        <div class="container news">
+          <div>
+            <div class="section__heading">
+              <span class="section__kicker">News & Events</span>
+              <h2>今月のお知らせ</h2>
+            </div>
+            <ul class="news__list">
+              <li>
+                <time datetime="2024-03-15">2024.03.15</time>
+                <p>春の限定メニューがスタートしました。数量限定で桜クッキーをプレゼント！</p>
+              </li>
+              <li>
+                <time datetime="2024-03-02">2024.03.02</time>
+                <p>3/20(水・祝)に夜カフェライブを開催。アコースティックギターの生演奏をお楽しみください。</p>
+              </li>
+              <li>
+                <time datetime="2024-02-22">2024.02.22</time>
+                <p>新しい豆「エチオピア・イルガチェフェ」が入荷しました。フルーティな香りをぜひ。</p>
+              </li>
+            </ul>
+          </div>
+          <aside class="news__aside">
+            <h3>メールマガジン</h3>
+            <p>限定メニューやイベント情報をいち早くお届けします。</p>
+            <form class="newsletter" aria-label="メールマガジン登録フォーム">
+              <label class="sr-only" for="newsletter-email">メールアドレス</label>
+              <input
+                type="email"
+                id="newsletter-email"
+                name="email"
+                placeholder="mail@example.com"
+                required
+              />
+              <button type="submit" class="btn btn--primary">登録する</button>
+            </form>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section--accent visit" id="visit">
+        <div class="container visit__grid">
+          <div class="visit__info">
+            <span class="section__kicker">Location</span>
+            <h2>店舗情報</h2>
+            <p>東京都渋谷区桜丘町1-2-3<br />渋谷駅西口より徒歩5分</p>
+            <div class="hours">
+              <h3>営業時間</h3>
+              <ul>
+                <li>平日: 8:00 - 21:00</li>
+                <li>土曜: 9:00 - 22:00</li>
+                <li>日祝: 9:00 - 19:00</li>
+              </ul>
+            </div>
+            <div class="contact-links">
+              <a href="tel:0312345678">TEL 03-1234-5678</a>
+              <a href="mailto:hello@hikaricoffee.jp">hello@hikaricoffee.jp</a>
+            </div>
+          </div>
+          <div class="visit__map" role="presentation" aria-hidden="true">
+            <iframe
+              title="Hikari Coffee の場所"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.7290302158156!2d139.69932507642876!3d35.65751213109592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ca545649623%3A0x96e582bc40365ce!2z5riL6LC35Lit5aSu5Yy65Lit5aSu56eR5oqA44K544OG44Kj44Oz44OI44Or!5e0!3m2!1sja!2sjp!4v1709980000000"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container contact">
+          <div class="section__heading">
+            <span class="section__kicker">Reservation</span>
+            <h2 id="reservation">お席のご予約</h2>
+            <p>フォームまたはお電話にて承ります。お気軽にご相談ください。</p>
+          </div>
+          <form class="contact__form" aria-labelledby="reservation">
+            <div class="form__group">
+              <label for="name">お名前</label>
+              <input type="text" id="name" name="name" required placeholder="山田 花子" />
+            </div>
+            <div class="form__group">
+              <label for="email">メールアドレス</label>
+              <input type="email" id="email" name="email" required placeholder="hanako@example.com" />
+            </div>
+            <div class="form__group">
+              <label for="date">ご来店日</label>
+              <input type="date" id="date" name="date" required />
+            </div>
+            <div class="form__group">
+              <label for="time">ご来店時間</label>
+              <input type="time" id="time" name="time" required />
+            </div>
+            <div class="form__group">
+              <label for="guests">人数</label>
+              <select id="guests" name="guests">
+                <option value="1">1名</option>
+                <option value="2" selected>2名</option>
+                <option value="3">3名</option>
+                <option value="4">4名</option>
+                <option value="5">5名以上</option>
+              </select>
+            </div>
+            <div class="form__group form__group--full">
+              <label for="message">ご要望</label>
+              <textarea id="message" name="message" rows="4" placeholder="アレルギーや記念日などのご要望があればご記入ください。"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary">送信する</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer__grid">
+        <div>
+          <a class="logo" href="#home">Hikari Coffee</a>
+          <p>
+            「光が差し込む場所で、心ほどける時間を。」<br />皆さまのお越しをお待ちしております。
+          </p>
+        </div>
+        <div>
+          <h3>営業時間</h3>
+          <ul>
+            <li>平日: 8:00 - 21:00</li>
+            <li>土曜: 9:00 - 22:00</li>
+            <li>日祝: 9:00 - 19:00</li>
+          </ul>
+        </div>
+        <div>
+          <h3>フォローする</h3>
+          <ul class="footer__social">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">LINE</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer__copy">&copy; 2024 Hikari Coffee All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
