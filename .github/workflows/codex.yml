@@ -1,0 +1,10 @@
+name: OpenAI Codex Code Generator
+on:
+  workflow_dispatch:  # 手動実行できるようにする
+jobs:
+  codex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: OpenAI Codex Code Generator
+        uses: lemonberrylabs/openai-codex-action@v0.3.0
+
