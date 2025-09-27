@@ -2,373 +2,1079 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>絵本の森プロジェクト｜親子の学びと女性クリエイターの循環をつくる</title>
     <meta
       name="description"
-      content="四季の味わいを楽しむ街角カフェ『Hikari Coffee』の公式サイト。季節限定メニューや自家焙煎コーヒー、こだわりのスイーツをご紹介します。"
+      content="子どもの想像力を育てる電子絵本と、女性クリエイターの新しい働き方をつなぐ共感型プロジェクト。noteサークル（月額980円）で親子の学び・交流とクリエイター育成を両立。"
     />
-    <title>Hikari Coffee | 街角のくつろぎカフェ</title>
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-      crossorigin
+    <meta property="og:title" content="絵本の森プロジェクト" />
+    <meta
+      property="og:description"
+      content="子どもの想像力を育てる電子絵本と、女性クリエイターの新しい働き方をつなぐ共感型プロジェクト。"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:wght@500;700&display=swap"
-      rel="stylesheet"
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="#" />
+    <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23A5D6A7'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='72' fill='%231C1C1C'%3Eehon no mori%3C/text%3E%3C/svg%3E" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="絵本の森プロジェクト" />
+    <meta
+      name="twitter:description"
+      content="教育×女性活躍×サステナブルの循環をつくる共感型プロジェクトです。"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <meta
+      name="twitter:image"
+      content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23A5D6A7'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='72' fill='%231C1C1C'%3Eehon no mori%3C/text%3E%3C/svg%3E"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --green-forest: #2e7d32;
+        --green-leaf: #a5d6a7;
+        --cream: #fff8e1;
+        --ink: #1c1c1c;
+        --white: #fff;
+        --accent-sky: #7ecbff;
+        --shadow: 0 12px 32px rgba(28, 28, 28, 0.08);
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", system-ui, sans-serif;
+        line-height: 1.6;
+        color: var(--ink);
+        background: var(--cream);
+        min-height: 100vh;
+      }
+      a {
+        color: inherit;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 16px;
+        background: var(--green-forest);
+        color: var(--white);
+        padding: 8px 16px;
+        border-radius: 999px;
+        transition: top 0.3s ease;
+        z-index: 1000;
+      }
+      .skip-link:focus {
+        top: 16px;
+      }
+      header {
+        background: rgba(255, 248, 225, 0.95);
+        backdrop-filter: blur(6px);
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        border-bottom: 1px solid rgba(46, 125, 50, 0.1);
+      }
+      .container {
+        width: min(1120px, 92vw);
+        margin: 0 auto;
+      }
+      .header__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 16px 0;
+      }
+      .logo {
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        color: var(--green-forest);
+        font-size: 1.1rem;
+      }
+      .nav-toggle {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+        width: 44px;
+        height: 44px;
+        border: 1px solid rgba(46, 125, 50, 0.4);
+        border-radius: 12px;
+        background: var(--white);
+        cursor: pointer;
+      }
+      .nav-toggle span {
+        display: block;
+        height: 2px;
+        width: 20px;
+        margin: 0 auto;
+        background: var(--green-forest);
+      }
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .site-nav {
+        position: fixed;
+        inset: 70px 16px auto 16px;
+        background: var(--white);
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        padding: 24px;
+        transform: translateY(-20px);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+      }
+      .site-nav.is-open {
+        opacity: 1;
+        visibility: visible;
+      }
+      .site-nav a {
+        text-decoration: none;
+        font-weight: 500;
+        color: var(--ink);
+      }
+      .primary-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 16px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 12px 20px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        border: 2px solid transparent;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .btn--primary {
+        background: var(--green-forest);
+        color: var(--white);
+      }
+      .btn--ghost {
+        background: transparent;
+        color: var(--green-forest);
+        border-color: var(--green-forest);
+      }
+      .btn:hover,
+      .btn:focus-visible {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 14px rgba(46, 125, 50, 0.2);
+        outline: 3px solid rgba(165, 214, 167, 0.6);
+        outline-offset: 2px;
+      }
+      main {
+        scroll-margin-top: 80px;
+      }
+      section {
+        padding: 72px 0;
+      }
+      .hero {
+        padding-top: 128px;
+        position: relative;
+        overflow: hidden;
+        background: radial-gradient(circle at 12% 18%, rgba(126, 203, 255, 0.25), transparent 60%),
+          radial-gradient(circle at 80% 10%, rgba(46, 125, 50, 0.18), transparent 55%),
+          linear-gradient(180deg, rgba(255, 248, 225, 0.9), rgba(165, 214, 167, 0.35));
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" preserveAspectRatio="none"%3E%3Cdefs%3E%3ClinearGradient id="g" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3E%3Cstop offset="0" stop-color="%23A5D6A7" stop-opacity="0.22"/%3E%3Cstop offset="1" stop-color="%23FFFFFF" stop-opacity="0"/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="320" height="320" fill="url(%23g)"/%3E%3Ccircle cx="60" cy="100" r="28" fill="%23FFFFFF" fill-opacity="0.6"/%3E%3Ccircle cx="270" cy="40" r="22" fill="%237ECBFF" fill-opacity="0.35"/%3E%3Ccircle cx="250" cy="220" r="42" fill="%23A5D6A7" fill-opacity="0.25"/%3E%3C/svg%3E');
+        mix-blend-mode: screen;
+        opacity: 0.7;
+        pointer-events: none;
+      }
+      .hero__layout {
+        position: relative;
+        display: grid;
+        gap: 32px;
+        color: var(--ink);
+      }
+      .hero__content {
+        display: grid;
+        gap: 20px;
+        text-align: center;
+      }
+      .hero__kicker {
+        letter-spacing: 0.2em;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        color: var(--green-forest);
+      }
+      .hero h1 {
+        font-size: clamp(2.1rem, 4vw, 3.2rem);
+        margin: 0;
+      }
+      .hero h2 {
+        font-size: clamp(1.4rem, 3vw, 2.1rem);
+        margin: 0;
+        color: var(--green-forest);
+        font-weight: 600;
+      }
+      .hero__visual {
+        display: grid;
+        place-items: center;
+        position: relative;
+      }
+      .hero__visual::after {
+        content: "";
+        position: absolute;
+        inset: 12% 14% 6%;
+        border-radius: 32px;
+        background: linear-gradient(160deg, rgba(255, 255, 255, 0.72), rgba(165, 214, 167, 0.25));
+        box-shadow: 0 24px 60px rgba(46, 125, 50, 0.18);
+        z-index: -1;
+      }
+      .hero__visual svg {
+        max-width: 320px;
+        width: 100%;
+      }
+      .hero__actions {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+      }
+      .trust-pills {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+      .trust-pills span {
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(46, 125, 50, 0.18);
+        border-radius: 999px;
+        padding: 8px 16px;
+        font-size: 0.85rem;
+      }
+      h2 {
+        font-size: clamp(1.8rem, 2.8vw, 2.3rem);
+        margin-bottom: 16px;
+      }
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+      }
+      p {
+        margin: 0 0 12px;
+      }
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .grid-3 {
+        display: grid;
+        gap: 24px;
+      }
+      .card {
+        position: relative;
+        background: linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(165, 214, 167, 0.25));
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+      .card::after {
+        content: "";
+        position: absolute;
+        inset: 12px;
+        border-radius: 20px;
+        border: 1px solid rgba(46, 125, 50, 0.12);
+        pointer-events: none;
+      }
+      .card svg {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 16px;
+      }
+      .evidence {
+        display: grid;
+        gap: 32px;
+      }
+      .kpi-card {
+        background: var(--white);
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: var(--shadow);
+      }
+      .kpi-card dl {
+        margin: 0;
+        display: grid;
+        gap: 12px;
+      }
+      .kpi-card dt {
+        font-weight: 700;
+        color: var(--green-forest);
+      }
+      .community {
+        display: grid;
+        gap: 24px;
+      }
+      .community-item {
+        position: relative;
+        background: linear-gradient(140deg, rgba(255, 255, 255, 0.96), rgba(126, 203, 255, 0.2));
+        border-radius: 28px;
+        padding: 28px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+      .community-item::before {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        right: -40px;
+        top: -40px;
+        background: radial-gradient(circle, rgba(126, 203, 255, 0.35), transparent 70%);
+        pointer-events: none;
+      }
+      .community-voices {
+        display: grid;
+        gap: 16px;
+        margin-top: 24px;
+      }
+      .voice-card {
+        display: grid;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 12px 24px rgba(28, 28, 28, 0.06);
+        border: 1px solid rgba(46, 125, 50, 0.12);
+      }
+      .voice-card cite {
+        font-style: normal;
+        font-weight: 600;
+        color: var(--green-forest);
+      }
+      .voice-card span {
+        font-size: 0.85rem;
+        color: rgba(28, 28, 28, 0.72);
+      }
+      .price-card {
+        position: relative;
+        background: linear-gradient(150deg, rgba(255, 255, 255, 0.95), rgba(165, 214, 167, 0.3));
+        border-radius: 28px;
+        padding: 32px 28px;
+        box-shadow: var(--shadow);
+        text-align: center;
+        overflow: hidden;
+      }
+      .price-card::before {
+        content: "";
+        position: absolute;
+        width: 140px;
+        height: 140px;
+        left: -40px;
+        bottom: -40px;
+        background: radial-gradient(circle, rgba(46, 125, 50, 0.18), transparent 70%);
+        pointer-events: none;
+      }
+      .price-card strong {
+        font-size: 2rem;
+        color: var(--green-forest);
+      }
+      .roadmap {
+        overflow-x: auto;
+        padding-bottom: 12px;
+      }
+      .roadmap ul {
+        display: flex;
+        gap: 16px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .roadmap li {
+        min-width: 180px;
+        background: var(--white);
+        border-radius: 18px;
+        padding: 16px;
+        box-shadow: var(--shadow);
+      }
+      .team-grid {
+        display: grid;
+        gap: 24px;
+      }
+      .team-card {
+        background: var(--white);
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: var(--shadow);
+        text-align: center;
+      }
+      .team-card svg {
+        width: 96px;
+        height: 96px;
+        margin: 0 auto 16px;
+      }
+      details {
+        background: var(--white);
+        border-radius: 18px;
+        padding: 16px 20px;
+        box-shadow: var(--shadow);
+      }
+      details + details {
+        margin-top: 16px;
+      }
+      details summary {
+        cursor: pointer;
+        font-weight: 600;
+        list-style: none;
+      }
+      details[open] summary {
+        color: var(--green-forest);
+      }
+      .contact {
+        background: var(--green-leaf);
+        border-radius: 32px 32px 0 0;
+        padding: 48px 24px 72px;
+      }
+      form {
+        display: grid;
+        gap: 16px;
+      }
+      label {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-weight: 600;
+      }
+      input,
+      textarea {
+        padding: 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(28, 28, 28, 0.2);
+        font: inherit;
+      }
+      input:focus-visible,
+      textarea:focus-visible {
+        outline: 3px solid rgba(46, 125, 50, 0.4);
+        outline-offset: 2px;
+      }
+      .form-note {
+        font-size: 0.85rem;
+        color: rgba(28, 28, 28, 0.8);
+      }
+      footer {
+        margin-top: 48px;
+        text-align: center;
+        font-size: 0.9rem;
+        color: rgba(28, 28, 28, 0.72);
+      }
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+      }
+      .footer-links a {
+        color: var(--ink);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 24px;
+        padding: 12px 16px;
+        margin-top: 8px;
+      }
+      .badge strong {
+        font-size: 1.4rem;
+        color: var(--green-forest);
+      }
+      [hidden] {
+        display: none !important;
+      }
+      @media (min-width: 720px) {
+        .nav-toggle {
+          display: none;
+        }
+        .site-nav {
+          position: static;
+          background: transparent;
+          box-shadow: none;
+          padding: 0;
+          opacity: 1;
+          visibility: visible;
+        }
+        nav ul {
+          flex-direction: row;
+          align-items: center;
+          gap: 24px;
+        }
+        .primary-actions {
+          flex-direction: row;
+          margin-top: 0;
+        }
+        .hero__layout {
+          grid-template-columns: 1.05fr 0.95fr;
+          align-items: center;
+        }
+        .hero__content {
+          text-align: left;
+          padding: 40px 0 0;
+        }
+        .hero__actions {
+          flex-direction: row;
+        }
+        .grid-3 {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .evidence {
+          grid-template-columns: 1.1fr 0.9fr;
+          align-items: start;
+        }
+        .community {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .community-voices {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .team-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .contact-inner {
+          display: grid;
+          grid-template-columns: 1.1fr 0.9fr;
+          gap: 32px;
+          align-items: start;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+        }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "絵本の森プロジェクト",
+        "url": "#",
+        "logo": "#",
+        "sameAs": ["#", "#", "#"],
+        "description": "子どもの想像力を育てる電子絵本と、女性クリエイターの新しい働き方をつなぐ共感型プロジェクト。"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "絵本の森project 公式サイト",
+        "url": "#",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "#?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
   </head>
   <body>
-    <header class="site-header" id="home">
+    <a href="#main" class="skip-link">本文へ移動</a>
+    <header>
       <div class="container header__inner">
-        <a class="logo" href="#home">Hikari Coffee</a>
-        <button
-          class="nav-toggle"
-          aria-expanded="false"
-          aria-controls="site-navigation"
-          aria-label="メニューを開閉"
-        >
+        <a class="logo" href="#home">絵本の森project</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-navigation" aria-label="メニューを開閉">
           <span></span>
           <span></span>
           <span></span>
         </button>
         <nav class="site-nav" id="site-navigation">
           <ul>
-            <li><a href="#about">私たちについて</a></li>
-            <li><a href="#menu">メニュー</a></li>
-            <li><a href="#seasonal">季節限定</a></li>
-            <li><a href="#gallery">ギャラリー</a></li>
-            <li><a href="#visit">アクセス</a></li>
-            <li><a href="#contact">ご予約</a></li>
+            <li><a href="#mission">理念</a></li>
+            <li><a href="#solutions">事業内容</a></li>
+            <li><a href="#evidence">市場と社会的意義</a></li>
+            <li><a href="#community">コミュニティ</a></li>
+            <li><a href="#pricing">料金</a></li>
+            <li><a href="#roadmap">ロードマップ</a></li>
+            <li><a href="#team">チーム</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
           </ul>
+          <div class="primary-actions">
+            <a class="btn btn--primary" href="#join">サークルに参加</a>
+            <a class="btn btn--ghost" href="#contact">資料請求</a>
+          </div>
         </nav>
       </div>
     </header>
 
-    <main>
-      <section class="hero">
-        <div class="container hero__content">
-          <p class="hero__kicker">四季の香りに満ちた街角カフェ</p>
-          <h1>一杯のコーヒーから始まる、穏やかなひととき。</h1>
-          <p>
-            自家焙煎の豆と旬の素材で作るスイーツ。朝は光が差し込み、夜はキャンドルが灯る、心やすらぐ空間でお待ちしています。
-          </p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#reservation">オンライン予約</a>
-            <a class="btn btn--ghost" href="#menu">メニューを見る</a>
+    <main id="main">
+      <section class="hero" id="home">
+        <div class="container hero__layout">
+          <div class="hero__content">
+            <p class="hero__kicker">森で生まれる学びの循環</p>
+            <h1>1冊の絵本が、親子と社会をつなぐ。</h1>
+            <h2>小さな物語から、大きな未来へ。</h2>
+            <p>
+              子どもの感性と学びを育てる電子絵本を、ママクリエイターと共に制作・販売。noteサークル（月額980円）で親子の学び・交流とクリエイター育成を両立します。
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#join" aria-label="noteサークルに参加する">noteサークル（月額980円）に参加</a>
+              <a class="btn btn--ghost" href="#crowdfunding">クラファンをチェック</a>
+            </div>
+            <div class="trust-pills" role="list">
+              <span role="listitem">教育×女性クリエイター×デジタル</span>
+              <span role="listitem">サステナブル</span>
+              <span role="listitem">共感型コミュニティ</span>
+            </div>
+          </div>
+          <div class="hero__visual">
+            <svg viewBox="0 0 360 360" role="img" aria-label="森で絵本を読む親子のイラスト">
+              <defs>
+                <linearGradient id="leafLight" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#A5D6A7" stop-opacity="0.8" />
+                  <stop offset="100%" stop-color="#7ECBFF" stop-opacity="0.6" />
+                </linearGradient>
+              </defs>
+              <rect x="40" y="60" width="280" height="220" rx="48" fill="url(#leafLight)" opacity="0.45"></rect>
+              <path d="M60 260c40-34 82-36 120-6s96 22 134-28" fill="none" stroke="#2E7D32" stroke-width="6" stroke-linecap="round"></path>
+              <ellipse cx="180" cy="280" rx="120" ry="28" fill="#2E7D32" opacity="0.18"></ellipse>
+              <g>
+                <path d="M150 140c-16 0-30 12-32 28l-8 56c12 8 38 8 50 0l-6-56c-2-16-8-28-4-28z" fill="#FFFFFF" opacity="0.95"></path>
+                <circle cx="142" cy="140" r="20" fill="#FFF8E1"></circle>
+                <circle cx="138" cy="134" r="6" fill="#2E7D32"></circle>
+                <circle cx="150" cy="134" r="6" fill="#2E7D32"></circle>
+              </g>
+              <g>
+                <path d="M212 150c20 0 38 12 42 32l10 60c-16 12-48 12-64 0l8-60c2-16 2-32 4-32z" fill="#FFFFFF" opacity="0.95"></path>
+                <circle cx="220" cy="142" r="22" fill="#FFF8E1"></circle>
+                <circle cx="214" cy="138" r="6" fill="#2E7D32"></circle>
+                <circle cx="228" cy="138" r="6" fill="#2E7D32"></circle>
+              </g>
+              <path d="M132 200h116c8 0 14 6 14 14v10c0 8-6 14-14 14H132c-8 0-14-6-14-14v-10c0-8 6-14 14-14z" fill="#2E7D32"></path>
+              <path d="M132 200l58 26 58-26" fill="none" stroke="#7ECBFF" stroke-width="4"></path>
+              <g opacity="0.4">
+                <path d="M98 118c-18-8-40-40-14-70s74-18 90 4" fill="none" stroke="#A5D6A7" stroke-width="5" stroke-linecap="round"></path>
+                <circle cx="96" cy="80" r="16" fill="#7ECBFF" opacity="0.35"></circle>
+              </g>
+            </svg>
           </div>
         </div>
       </section>
 
-      <section class="about" id="about">
-        <div class="container about__grid">
-          <div class="about__image" role="presentation" aria-hidden="true"></div>
-          <div class="about__content">
-            <h2>私たちのこだわり</h2>
-            <p>
-              Hikari Coffee は「日常を照らす一杯」をテーマに、丁寧なハンドドリップと旬の素材を掛け合わせたメニューをご提供しています。豆は世界各地の小規模農園からセレクト。焙煎は店内のロースターで行い、豊かな香りと奥行きのある味わいを引き出します。
-            </p>
-            <p>
-              店内は木の温もりとやわらかな灯りに包まれ、朝から夜までさまざまなシーンでご利用いただけます。テイクアウトもお気軽にどうぞ。
-            </p>
-            <ul class="about__list">
-              <li>・自家焙煎のスペシャルティコーヒー</li>
-              <li>・季節の果実を使ったスイーツとドリンク</li>
-              <li>・ヴィーガン対応メニューもご用意</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="menu">
+      <section id="mission">
         <div class="container">
-          <div class="section__heading">
-            <span class="section__kicker">Signature Menu</span>
-            <h2>人気の定番メニュー</h2>
-            <p>
-              どの時間帯にもぴったりな、Hikari Coffee の看板メニューをご紹介します。
-            </p>
+          <div class="section-title">
+            <h2>理念</h2>
+            <p>子どもに学びを、ママに働き方を、社会に循環を。</p>
           </div>
-          <div class="card-grid">
-            <article class="card">
-              <h3>光ブレンドコーヒー</h3>
-              <p>
-                3種類の豆を独自比率でブレンド。柑橘の香りとビターチョコの余韻が心地よく広がります。
-              </p>
-              <p class="card__price">¥620</p>
-            </article>
-            <article class="card">
-              <h3>抹茶ラテ・グラッセ</h3>
-              <p>
-                京都宇治の抹茶と自家製のオーツミルクシロップ。まろやかな甘みと香りが楽しめます。
-              </p>
-              <p class="card__price">¥680</p>
-            </article>
-            <article class="card">
-              <h3>森の果実タルト</h3>
-              <p>
-                季節のベリーを贅沢に使用したタルト。サクサクのタルト生地に甘酸っぱい果実が彩りを添えます。
-              </p>
-              <p class="card__price">¥720</p>
-            </article>
-            <article class="card">
-              <h3>モーニングプレート</h3>
-              <p>
-                自家製グラノーラ、季節のスープ、焼き立てフォカッチャがセットになった人気の朝食プレート。
-              </p>
-              <p class="card__price">¥1,100</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section--accent" id="seasonal">
-        <div class="container seasonal">
-          <div>
-            <span class="section__kicker">Seasonal Special</span>
-            <h2>春の限定メニュー</h2>
-            <p>
-              春の訪れを感じる、淡い色合いと香りが魅力の限定メニューが登場。旬の苺や桜をテーマにしたラインアップです。
-            </p>
-          </div>
-          <ul class="seasonal__list">
-            <li>
-              <h3>桜のアフォガート</h3>
-              <p>桜の香りを閉じ込めたジェラートに、エスプレッソを注いでお召し上がりください。</p>
-            </li>
-            <li>
-              <h3>苺とルバーブのトースト</h3>
-              <p>自家製酵母パンに、甘酸っぱいコンポートとフレッシュチーズを合わせました。</p>
-            </li>
-            <li>
-              <h3>春のシトラスソーダ</h3>
-              <p>4種の柑橘をブレンド。爽やかな香りと微炭酸が、春風のように軽やかです。</p>
-            </li>
+          <p>
+            絵本の森プロジェクトは、親子の対話を深める電子絵本づくりを通じて、子どもの「学び」と女性クリエイターの「しごと」の両立を応援します。創作の過程もオープンに共有し、地域・企業・家庭がつながる循環型のエコシステムを構築します。
+          </p>
+          <ul>
+            <li>教育的価値：STEAM視点と物語で、非認知能力と対話力を引き出します。</li>
+            <li>新しい働き方：子育て期のママがオンラインで企画・制作・収益化まで担います。</li>
+            <li>持続可能性：紙資源と流通コストを抑え、サブスクリプションで循環型ビジネスを設計します。</li>
           </ul>
         </div>
       </section>
 
-      <section class="section" id="features">
-        <div class="container features">
-          <article>
-            <h3>自家焙煎スタジオ</h3>
-            <p>
-              店内で毎朝焙煎することで、豆の個性を最大限に引き出します。焙煎の様子はガラス越しにご覧いただけます。
-            </p>
-          </article>
-          <article>
-            <h3>バリスタワークショップ</h3>
-            <p>
-              毎月第2土曜日に、ラテアート体験や豆の選び方を学べる少人数制のワークショップを開催しています。
-            </p>
-          </article>
-          <article>
-            <h3>こだわりの空間</h3>
-            <p>
-              木と真鍮を基調にしたインテリア。窓際の席や奥のソファ席など、シーンに合わせた座席をご用意しています。
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="gallery">
+      <section id="solutions">
         <div class="container">
-          <div class="section__heading">
-            <span class="section__kicker">Gallery</span>
-            <h2>店内の雰囲気</h2>
-            <p>昼と夜で表情を変える、Hikari Coffee の空間を少しだけご紹介します。</p>
+          <div class="section-title">
+            <h2>事業内容</h2>
+            <p>三つの柱で共感と経済性を両立し、子ども・保護者・クリエイターを結びます。</p>
           </div>
-          <div class="gallery">
-            <figure>
-              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="木のテーブルと観葉植物がある明るいカフェの店内" />
-              <figcaption>朝の柔らかな光が差し込むカウンター席。</figcaption>
-            </figure>
-            <figure>
-              <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=800&q=80" alt="アートなラテアートが描かれたカフェラテ" />
-              <figcaption>バリスタが丁寧に仕上げるラテアート。</figcaption>
-            </figure>
-            <figure>
-              <img src="https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?auto=format&fit=crop&w=800&q=80" alt="木のトレイに並ぶタルトや焼き菓子" />
-              <figcaption>旬の果実を使った色鮮やかなスイーツ。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section--light" id="testimonials">
-        <div class="container">
-          <div class="section__heading">
-            <span class="section__kicker">Voices</span>
-            <h2>お客様の声</h2>
-          </div>
-          <div class="testimonials">
-            <blockquote>
-              <p>
-                「季節ごとにメニューが変わるので通うのが楽しみ。スタッフの皆さんの笑顔に癒やされます。」
-              </p>
-              <cite>— 会社員・Aさん</cite>
-            </blockquote>
-            <blockquote>
-              <p>
-                「落ち着いた空間で、仕事の打ち合わせにもぴったり。コーヒーの香りが心地よく広がります。」
-              </p>
-              <cite>— デザイナー・Mさん</cite>
-            </blockquote>
-            <blockquote>
-              <p>
-                「ヴィーガン対応のスイーツがあるのが嬉しい！テイクアウトでもよく利用しています。」
-              </p>
-              <cite>— 大学生・Rさん</cite>
-            </blockquote>
+          <div class="grid-3">
+            <article class="card">
+              <svg role="img" aria-label="電子絵本">
+                <rect width="100%" height="100%" rx="12" fill="#A5D6A7"></rect>
+                <path d="M16 20h64v48H16z" fill="none" stroke="#2E7D32" stroke-width="4"></path>
+                <circle cx="48" cy="44" r="6" fill="#2E7D32"></circle>
+              </svg>
+              <h3>電子絵本の制作・販売</h3>
+              <p>STEAM×アートの学びを組み込んだオリジナル電子絵本を定期的にリリース。家庭・園・学校向けの導入支援も行います。</p>
+              <a href="#" class="btn btn--ghost" style="margin-top:16px">詳細へ</a>
+            </article>
+            <article class="card">
+              <svg role="img" aria-label="コミュニティ">
+                <rect width="100%" height="100%" rx="12" fill="#FFF8E1"></rect>
+                <path d="M24 40c6-12 38-12 44 0" stroke="#2E7D32" stroke-width="4" fill="none" stroke-linecap="round"></path>
+                <circle cx="36" cy="32" r="6" fill="#2E7D32"></circle>
+                <circle cx="56" cy="32" r="6" fill="#2E7D32"></circle>
+              </svg>
+              <h3>コミュニティ運営（noteサークル）</h3>
+              <p>読み聞かせライブ、教育コラム、家庭で使えるワークシートを提供しながら、親子同士・専門家・企業が交流する場をつくります。</p>
+              <a href="#" class="btn btn--ghost" style="margin-top:16px">詳細へ</a>
+            </article>
+            <article class="card">
+              <svg role="img" aria-label="クリエイター育成">
+                <rect width="100%" height="100%" rx="12" fill="#FFFFFF"></rect>
+                <path d="M24 56l12-28 12 16 12-24 12 36" stroke="#2E7D32" stroke-width="4" fill="none"></path>
+                <circle cx="60" cy="20" r="6" fill="#A5D6A7"></circle>
+              </svg>
+              <h3>クリエイター育成</h3>
+              <p>シナリオ・イラスト・音響・マーケティングを学ぶオンライン講座と共作ワークで、収益分配までをサポートします。</p>
+              <a href="#" class="btn btn--ghost" style="margin-top:16px">詳細へ</a>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="section" id="news">
-        <div class="container news">
+      <section id="evidence">
+        <div class="container evidence">
           <div>
-            <div class="section__heading">
-              <span class="section__kicker">News & Events</span>
-              <h2>今月のお知らせ</h2>
+            <div class="section-title" style="text-align:left">
+              <h2>市場と社会的意義</h2>
+              <p>教育×女性活躍×サステナブルの循環をつくる共感型プロジェクトです。</p>
             </div>
-            <ul class="news__list">
-              <li>
-                <time datetime="2024-03-15">2024.03.15</time>
-                <p>春の限定メニューがスタートしました。数量限定で桜クッキーをプレゼント！</p>
-              </li>
-              <li>
-                <time datetime="2024-03-02">2024.03.02</time>
-                <p>3/20(水・祝)に夜カフェライブを開催。アコースティックギターの生演奏をお楽しみください。</p>
-              </li>
-              <li>
-                <time datetime="2024-02-22">2024.02.22</time>
-                <p>新しい豆「エチオピア・イルガチェフェ」が入荷しました。フルーティな香りをぜひ。</p>
-              </li>
+            <h3>市場データ</h3>
+            <ul>
+              <li>絵本市場：351億円（2023年、児童書内で堅調）</li>
+              <li>電子出版市場：5,660億円（前年比+5.8%）</li>
+              <li>年間新作絵本：1,000〜1,500点が継続的に誕生</li>
             </ul>
+            <p>デジタル絵本の需要は伸長しながらも、親子の共体験を支える質の高い作品とコミュニティは不足しています。私たちは家庭・園・企業のパートナーとして、創作・流通・学びを統合した価値を提供します。</p>
+            <p class="form-note">※数値は公開調査に基づく社内整理（詳細はお問い合わせにて／#）。</p>
           </div>
-          <aside class="news__aside">
-            <h3>メールマガジン</h3>
-            <p>限定メニューやイベント情報をいち早くお届けします。</p>
-            <form class="newsletter" aria-label="メールマガジン登録フォーム">
-              <label class="sr-only" for="newsletter-email">メールアドレス</label>
-              <input
-                type="email"
-                id="newsletter-email"
-                name="email"
-                placeholder="mail@example.com"
-                required
-              />
-              <button type="submit" class="btn btn--primary">登録する</button>
-            </form>
+          <aside class="kpi-card" aria-labelledby="kpi-heading">
+            <h3 id="kpi-heading">社会的インパクトKPI</h3>
+            <dl>
+              <div class="badge">
+                <strong>500→1万</strong>
+                <span>家庭の読書体験（初年度500家庭、3年3,000家庭、5年1万家庭）</span>
+              </div>
+              <div>
+                <dt>ママクリエイター支援</dt>
+                <dd>初年度10名、3年50名、5年100名の収益化を目指します。</dd>
+              </div>
+              <div>
+                <dt>紙資源削減</dt>
+                <dd>電子化により年間約2トン相当の紙使用を削減する試算です。</dd>
+              </div>
+            </dl>
           </aside>
         </div>
       </section>
 
-      <section class="section section--accent visit" id="visit">
-        <div class="container visit__grid">
-          <div class="visit__info">
-            <span class="section__kicker">Location</span>
-            <h2>店舗情報</h2>
-            <p>東京都渋谷区桜丘町1-2-3<br />渋谷駅西口より徒歩5分</p>
-            <div class="hours">
-              <h3>営業時間</h3>
-              <ul>
-                <li>平日: 8:00 - 21:00</li>
-                <li>土曜: 9:00 - 22:00</li>
-                <li>日祝: 9:00 - 19:00</li>
-              </ul>
-            </div>
-            <div class="contact-links">
-              <a href="tel:0312345678">TEL 03-1234-5678</a>
-              <a href="mailto:hello@hikaricoffee.jp">hello@hikaricoffee.jp</a>
-            </div>
+      <section id="community">
+        <div class="container">
+          <div class="section-title">
+            <h2>コミュニティ</h2>
+            <p>親子の学びとクリエイターの挑戦を同じ輪の中で支えます。</p>
           </div>
-          <div class="visit__map" role="presentation" aria-hidden="true">
-            <iframe
-              title="Hikari Coffee の場所"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.7290302158156!2d139.69932507642876!3d35.65751213109592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ca545649623%3A0x96e582bc40365ce!2z5riL6LC35Lit5aSu5Yy65Lit5aSu56eR5oqA44K544OG44Kj44Oz44OI44Or!5e0!3m2!1sja!2sjp!4v1709980000000"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+          <div class="community">
+            <article class="community-item">
+              <h3>親子の学び</h3>
+              <p>読み聞かせライブ、教育コラム、季節のワークショップで家庭の学びをアップデート。ICT活用のヒントも共有します。</p>
+              <ul>
+                <li>読み聞かせ×探究ワークで非認知能力を育む</li>
+                <li>教育専門家によるコラムと相談会</li>
+                <li>家庭・園・企業の協働プログラム</li>
+              </ul>
+            </article>
+            <article class="community-item">
+              <h3>クリエイター育成</h3>
+              <p>出版ノウハウ、共作プロジェクト、収益分配スキームを公開。子育て期でも柔軟に参加できる制作プロセスです。</p>
+              <ul>
+                <li>ストーリーテリングとデザインの実践講座</li>
+                <li>編集・音響・マーケティングを学ぶラボ</li>
+                <li>クラファン連動で制作費と収益をシェア</li>
+              </ul>
+            </article>
+          </div>
+          <div class="community-voices" aria-label="親子とクリエイターの声">
+            <article class="voice-card">
+              <p>「寝る前の10分が親子の対話タイムに。絵本の森プロジェクトの問いかけカードで、子どもが自分の言葉を探し始めました。」</p>
+              <cite>横浜市・5歳児のママ</cite>
+              <span>読み聞かせ歴 2年 / noteサークル参加6か月</span>
+            </article>
+            <article class="voice-card">
+              <p>「在宅でイラスト制作を続けながら、編集や音響の仲間と協働。収益分配の仕組みで、次の作品づくりにも挑戦できます。」</p>
+              <cite>千葉県・イラストレーター</cite>
+              <span>元グラフィックデザイナー / クリエイター会員</span>
+            </article>
+            <article class="voice-card">
+              <p>「園児の探究学習に組み合わせて導入。電子配信だからこそ、持続可能性や多文化理解の話題がスムーズに広がりました。」</p>
+              <cite>東京都・認定こども園 教育担当</cite>
+              <span>導入予定人数 60名 / 共同ワークショップ準備中</span>
+            </article>
+          </div>
+          <div id="join" class="price-card" style="margin-top:32px">
+            <h3>参加メリット</h3>
+            <p>親子の学びとクリエイターの挑戦を一つのサークルで。月額980円（税込）。いつでも入退会OK。</p>
+            <a class="btn btn--primary" href="#contact">参加相談を申し込む</a>
           </div>
         </div>
       </section>
 
-      <section class="section" id="contact">
-        <div class="container contact">
-          <div class="section__heading">
-            <span class="section__kicker">Reservation</span>
-            <h2 id="reservation">お席のご予約</h2>
-            <p>フォームまたはお電話にて承ります。お気軽にご相談ください。</p>
+      <section id="pricing">
+        <div class="container">
+          <div class="section-title">
+            <h2>料金</h2>
+            <p>シンプルな月額制で、価値を循環させる仕組みを提供します。</p>
           </div>
-          <form class="contact__form" aria-labelledby="reservation">
-            <div class="form__group">
-              <label for="name">お名前</label>
-              <input type="text" id="name" name="name" required placeholder="山田 花子" />
+          <div class="grid-3">
+            <article class="price-card">
+              <h3>noteサークル</h3>
+              <p><strong>月額980円</strong>（税込）</p>
+              <ul>
+                <li>オリジナル電子絵本の一部読み放題</li>
+                <li>限定イベント・ワークショップ参加</li>
+                <li>先行試読と制作裏話の共有</li>
+                <li>クリエイターマッチング・仕事紹介</li>
+              </ul>
+              <a class="btn btn--primary" href="#contact">資料を受け取る</a>
+            </article>
+            <article class="price-card">
+              <h3>法人ライセンス（準備中）</h3>
+              <p>園・学童・企業研修向けに電子絵本と研修プログラムを提供予定。</p>
+              <p class="form-note">お問い合わせで先行案内に登録できます。</p>
+            </article>
+            <article class="price-card">
+              <h3>スポンサー枠（準備中）</h3>
+              <p>サステナブル素材や教育商材とのコラボレーション、ブランド共創企画を設計中です。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="roadmap">
+        <div class="container">
+          <div class="section-title">
+            <h2>ロードマップ（1年）</h2>
+            <p>小さな成功を積み重ね、信頼とKPIを可視化する1年計画です。</p>
+          </div>
+          <div class="roadmap" aria-label="ロードマップ">
+            <ul>
+              <li>
+                <h3>7月</h3>
+                <p>第1作プロトタイプ完成。親子モニターでUX検証。</p>
+              </li>
+              <li>
+                <h3>8月</h3>
+                <p>クラファン公開。制作費とコミュニティ支援を募る。</p>
+              </li>
+              <li>
+                <h3>9月</h3>
+                <p>電子書籍化・配信手続きを完了。園・図書館へ導入提案。</p>
+              </li>
+              <li>
+                <h3>10月</h3>
+                <p>販売開始。noteサークルで読書イベント・教材提供。</p>
+              </li>
+              <li>
+                <h3>11月</h3>
+                <p>第2作の制作着手。スポンサーコラボと海外展開調査。</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="team">
+        <div class="container">
+          <div class="section-title">
+            <h2>チーム</h2>
+            <p>親子視点とプロフェッショナルの知見を融合した、小さな精鋭チームです。</p>
+          </div>
+          <div class="team-grid">
+            <article class="team-card">
+              <svg role="img" aria-label="代表のイラスト">
+                <circle cx="48" cy="48" r="46" fill="#A5D6A7"></circle>
+                <circle cx="48" cy="44" r="24" fill="#fff"></circle>
+                <rect x="22" y="72" width="52" height="32" rx="16" fill="#fff"></rect>
+              </svg>
+              <h3>代表 / プロデューサー</h3>
+              <p>EdTech企業で事業開発を担当。二児の母として、家庭と社会をつなぐ教育体験を設計。</p>
+            </article>
+            <article class="team-card">
+              <svg role="img" aria-label="ライターのイラスト">
+                <circle cx="48" cy="48" r="46" fill="#FFF8E1"></circle>
+                <circle cx="48" cy="44" r="24" fill="#fff"></circle>
+                <rect x="18" y="70" width="60" height="36" rx="18" fill="#fff"></rect>
+              </svg>
+              <h3>ライター / ママエディター</h3>
+              <p>児童書編集歴10年。親子の対話を引き出すシナリオ設計と読み聞かせ演出を担当。</p>
+            </article>
+            <article class="team-card">
+              <svg role="img" aria-label="デザイナーのイラスト">
+                <circle cx="48" cy="48" r="46" fill="#A5D6A7"></circle>
+                <circle cx="48" cy="44" r="24" fill="#fff"></circle>
+                <rect x="16" y="72" width="64" height="32" rx="16" fill="#fff"></rect>
+              </svg>
+              <h3>デザイナー / ママイラストレーター</h3>
+              <p>手描きとデジタルを融合させた優しいタッチで、感情を揺さぶるビジュアルを制作。</p>
+            </article>
+            <article class="team-card">
+              <svg role="img" aria-label="外部パートナーのイラスト">
+                <circle cx="48" cy="48" r="46" fill="#FFF8E1"></circle>
+                <circle cx="48" cy="44" r="24" fill="#fff"></circle>
+                <rect x="20" y="70" width="56" height="36" rx="18" fill="#fff"></rect>
+              </svg>
+              <h3>外部パートナー（動画・SNS）</h3>
+              <p>動画制作・SNS運用の専門家がプロジェクトの魅力を届け、クラファンの支援獲得を支援します。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="container">
+          <div class="section-title">
+            <h2>FAQ</h2>
+            <p>よくある質問と回答をご確認ください。その他はお気軽にお問い合わせを。</p>
+          </div>
+          <details>
+            <summary>参加までの流れは？</summary>
+            <p>お申し込みフォームにご連絡先を入力すると、48時間以内に参加ガイドと決済リンクをお送りします。</p>
+          </details>
+          <details>
+            <summary>対応端末を教えてください。</summary>
+            <p>最新のPC・タブレット・スマートフォン（iOS/Android）に対応。推奨ブラウザはChrome/Safari/Edgeです。</p>
+          </details>
+          <details>
+            <summary>対象年齢の目安はありますか？</summary>
+            <p>3歳〜小学校低学年を中心にしていますが、姉兄や保護者の読み聞かせで幅広い年齢が楽しめます。</p>
+          </details>
+          <details>
+            <summary>著作権や二次利用の扱いは？</summary>
+            <p>制作した作品の著作権はクリエイターと絵本の森プロジェクトの共同保有とし、二次利用は事前合意のもとで行います。</p>
+          </details>
+          <details>
+            <summary>解約はいつでも可能ですか？</summary>
+            <p>はい。マイページからいつでも解約でき、当月末までコミュニティ機能をご利用いただけます。</p>
+          </details>
+          <details>
+            <summary>請求や領収書は発行されますか？</summary>
+            <p>決済システムにて毎月請求し、領収書・利用明細をオンラインでダウンロードいただけます。</p>
+          </details>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="container contact-inner">
+          <div>
+            <h2>お問い合わせ</h2>
+            <p>クラファンの協働、法人導入、メディア取材のご相談を歓迎します。内容に応じて担当者から折り返します。</p>
+            <p class="form-note">※個人情報は利用目的の範囲内で適切に管理します。<a href="#">プライバシーポリシー</a>をご確認ください。</p>
+            <div class="footer-links" style="justify-content:flex-start">
+              <a href="#" aria-label="Instagram">Instagram</a>
+              <a href="#" aria-label="X">X</a>
+              <a href="#" aria-label="LINE">LINE</a>
             </div>
-            <div class="form__group">
-              <label for="email">メールアドレス</label>
-              <input type="email" id="email" name="email" required placeholder="hanako@example.com" />
-            </div>
-            <div class="form__group">
-              <label for="date">ご来店日</label>
-              <input type="date" id="date" name="date" required />
-            </div>
-            <div class="form__group">
-              <label for="time">ご来店時間</label>
-              <input type="time" id="time" name="time" required />
-            </div>
-            <div class="form__group">
-              <label for="guests">人数</label>
-              <select id="guests" name="guests">
-                <option value="1">1名</option>
-                <option value="2" selected>2名</option>
-                <option value="3">3名</option>
-                <option value="4">4名</option>
-                <option value="5">5名以上</option>
-              </select>
-            </div>
-            <div class="form__group form__group--full">
-              <label for="message">ご要望</label>
-              <textarea id="message" name="message" rows="4" placeholder="アレルギーや記念日などのご要望があればご記入ください。"></textarea>
-            </div>
-            <button type="submit" class="btn btn--primary">送信する</button>
+          </div>
+          <form novalidate>
+            <div role="status" aria-live="polite" id="form-status" class="form-note"></div>
+            <label for="name">お名前
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </label>
+            <label for="email">メールアドレス
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </label>
+            <label for="message">ご相談内容
+              <textarea id="message" name="message" rows="4" required></textarea>
+            </label>
+            <button class="btn btn--primary" type="submit">送信する</button>
           </form>
         </div>
+        <footer>
+          <div class="footer-links">
+            <a href="#">プライバシーポリシー</a>
+            <a href="#">特定商取引法に基づく表記</a>
+            <a href="#crowdfunding">クラファンをチェック</a>
+          </div>
+          <p>&copy; 2024 絵本の森プロジェクト</p>
+        </footer>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer__grid">
-        <div>
-          <a class="logo" href="#home">Hikari Coffee</a>
-          <p>
-            「光が差し込む場所で、心ほどける時間を。」<br />皆さまのお越しをお待ちしております。
-          </p>
-        </div>
-        <div>
-          <h3>営業時間</h3>
-          <ul>
-            <li>平日: 8:00 - 21:00</li>
-            <li>土曜: 9:00 - 22:00</li>
-            <li>日祝: 9:00 - 19:00</li>
-          </ul>
-        </div>
-        <div>
-          <h3>フォローする</h3>
-          <ul class="footer__social">
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">LINE</a></li>
-          </ul>
-        </div>
-      </div>
-      <p class="footer__copy">&copy; 2024 Hikari Coffee All Rights Reserved.</p>
-    </footer>
+    <script>
+      const navToggle = document.querySelector('.nav-toggle');
+      const siteNav = document.querySelector('.site-nav');
+      const statusEl = document.getElementById('form-status');
+      const form = document.querySelector('form');
 
-    <script src="script.js"></script>
+      function closeNav() {
+        siteNav.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+
+      if (navToggle) {
+        navToggle.addEventListener('click', () => {
+          const isOpen = siteNav.classList.toggle('is-open');
+          navToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+      }
+
+      siteNav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth < 720) {
+            closeNav();
+          }
+        });
+      });
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const message = form.message.value.trim();
+        const errors = [];
+
+        if (!name) {
+          errors.push('お名前を入力してください。');
+        }
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          errors.push('正しいメールアドレスを入力してください。');
+        }
+        if (!message) {
+          errors.push('ご相談内容を入力してください。');
+        }
+
+        if (errors.length) {
+          statusEl.textContent = errors.join(' ');
+          statusEl.style.color = '#d32f2f';
+        } else {
+          statusEl.textContent = '送信が完了しました。担当者からご連絡いたします。';
+          statusEl.style.color = '#2e7d32';
+          form.reset();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && window.innerWidth < 720) {
+          closeNav();
+        }
+      });
+    </script>
+    <!-- TODO: 差し替え予定
+      - og:image / twitter:image の実画像URL
+      - 実際の公式サイトURLおよび各種リンク
+      - 正式なロゴ・チーム写真・市場データ根拠URL
+      - フォーム送信先（現在はフロント側バリデーションのみ）
+    -->
   </body>
 </html>
